@@ -1,12 +1,13 @@
 #!/bin/bash
 
-if [[ "$OSTYPE" == "cygwin" ]] || [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
-    echo "This script cannot be run on Windows."
-    echo "Please follow the installation instructions at https://docs.python.org/3/using/windows.html"
-    echo "To install poetry on Windows, please follow the instructions at https://python-poetry.org/docs/master/#installation"
-    
-    exit 1
-else
+# Comment out the OS check for WSL
+# if [[ "$OSTYPE" == "cygwin" ]] || [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
+#     echo "This script cannot be run on Windows."
+#     echo "Please follow the installation instructions at https://docs.python.org/3/using/windows.html"
+#     echo "To install poetry on Windows, please follow the instructions at https://python-poetry.org/docs/master/#installation"
+#     
+#     exit 1
+# else
     if ! command -v python3 &> /dev/null
     then
         echo "python3 could not be found"
@@ -41,4 +42,4 @@ else
             exit 1
         fi
     fi
-fi
+# fi
